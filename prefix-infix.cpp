@@ -63,10 +63,17 @@ void PrefixToInfix::convert(string expression){
         return;
     }
     else{
-        //SUSSY BAKA
-        cout<<"(5 - 6) * 7"<<" = ";
+        // //SUSSY BAKA
+        // cout<<"(5 - 6) * 7"<<" = ";s
 
-        // cout<<s.top()<<" = ";
+
+        string result = s.top();
+
+        for (int i=1; i<result.size()-1; i++){
+            cout<<result[i]<<" ";
+        }
+
+        cout<<"= ";
         evaluate(expression);
 
         return;
