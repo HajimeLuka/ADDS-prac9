@@ -27,7 +27,7 @@ bool PrefixToInfix::isOperator(char x){
 void PrefixToInfix::convert(string expression){
     stack<string> s;
     int count=0;
-    int operandCount = 0;
+    int operandCount=0;
 
     int length = expression.size();
 
@@ -52,23 +52,30 @@ void PrefixToInfix::convert(string expression){
 
         }
 
-
-
         //if symbol is an operand
         else{
-            //check if its within bounds
-            // if (expression[i] < 0 || expression[i]>99){
-            //     cout << "Error";
-            //     return;
-            // }
-            operandCount++;
+
+            if (isdigit(expression[i])){
+                operandCount++;
+            }
+
             s.push(string(1, expression[i]));
 
         }
 
     }
 
-    if (count <= 1 || (operandCount - count)!=1 || count >= operandCount) {
+    operandCount = operandCount - count;
+
+    if (count <= 1){
+        cout<<"Error";
+        return;
+    }
+    if (operandCount - count != 1){
+        cout<<"Error";
+        return;
+    }
+    if (count >= operandCount){
         cout<<"Error";
         return;
     }
