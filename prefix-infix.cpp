@@ -62,10 +62,14 @@ void PrefixToInfix::convert(string expression){
             s.push(string(1, expression[i]));
 
         }
-
     }
 
     operandCount = operandCount - count;
+
+    if (operandCount == 1 && count == 0){
+        cout<<expression[0];
+        return;
+    }
 
     if (count <= 1){
         cout<<"Error";
