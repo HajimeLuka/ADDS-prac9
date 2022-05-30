@@ -67,7 +67,8 @@ void PrefixToInfix::convert(string expression){
     operandCount = operandCount - count;
 
     if (operandCount == 1 && count == 0){
-        cout<<expression[0];
+        cout<<expression[0]<<" = "<<expression[0];
+
         return;
     }
 
